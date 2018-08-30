@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Flashcards API' do
-  def article_params
+  def flashcard_params
     {
       word: 'Adept',
       definition: 'Very skilled or proficient at something',
@@ -9,13 +11,38 @@ RSpec.describe 'Flashcards API' do
     }
   end
 
+  def flashcards
+    Flashcard.all
+  end
+
+  def flashcard
+    Flashcard.first
+  end
+
+  before(:all) do
+    Flashcard.create!(flashcard_params)
+  end
+
+  after(:all) do
+    Flashcard.delete_all
+  end
+
   describe 'GET /flashcards' do
     it 'lists all flashcards' do
       get '/flashcards'
       expect(response).to be_success
-      articles_response = JSON.parse(response.body)
-      expect(articles_response.length).to eq(articles.count)
-      expect(articles_response.first['word']).to eq(article['word'])
+      flashcards_response = JSON.parse(response.body)
+      expect(flashcards_response.length).to eq(flashcards.count)
+      expect(flashcards_response.first['word']).to eq(flashcard['word'])
+    end
+  end
+
+  describe 'GET /articles/:id' do
+    it 'shows one flashcard' do
+      get "/flashcards/#{flashcard.id}"
+      expect(response).to be_success
+      flashcards_response = JSON.parse(response.body)
+      expect(flashcards_response['id']).to eq(flashcard.id)
     end
   end
 end
