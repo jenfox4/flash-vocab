@@ -37,7 +37,7 @@ RSpec.describe 'Flashcards API' do
     end
   end
 
-  describe 'GET /articles/:id' do
+  describe 'GET /flashcards/:id' do
     it 'shows one flashcard' do
       get "/flashcards/#{flashcard.id}"
       expect(response).to be_success
@@ -48,12 +48,20 @@ RSpec.describe 'Flashcards API' do
 
   describe 'POST /flashcards/' do
     it 'create a new flashcard' do
-      post "/flashcards", params: {flashcard: flashcard_params}
+      post '/flashcards', params: {flashcard: flashcard_params}
 
       flashcards_response = JSON.parse(response.body)
       expect(flashcards_response['name']).to eq(flashcard['name'])
     end
   end
 
+  describe 'PATCH /flashcards/'do
+    it 'create a new flashcard' do
+      patch '/flashcards', params: {flashcard: flashcard_params}
+
+      lashcards_response = JSON.parse(response.body)
+      expect(flashcards_response['id']).to eq(flashcard.id)
+    end
+  end
 
 end
