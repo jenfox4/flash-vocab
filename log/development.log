@@ -52,3 +52,65 @@ DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is depr
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
 DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+Started GET "/" for ::1 at 2018-08-30 15:04:29 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jen/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jen/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/flashcards" for 127.0.0.1 at 2018-08-30 15:05:00 -0400
+Processing by FlashcardsController#index as */*
+  [1m[36mFlashcard Load (1.3ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+No serializer found for resource: #<Flashcard id: 2, word: "Adept", definition: "h", sentence: "g", created_at: "2018-08-30 14:56:24", updated_at: "2018-08-30 14:56:24">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Flashcard::ActiveRecord_Relation (0.89ms)
+Completed 200 OK in 41ms (Views: 24.1ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/flashcards/1" for 127.0.0.1 at 2018-08-30 15:06:29 -0400
+Processing by FlashcardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFlashcard Load (1.1ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Flashcard (0.99ms)
+Completed 200 OK in 17ms (Views: 5.4ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/flashcards/1" for 127.0.0.1 at 2018-08-30 15:07:48 -0400
+Processing by FlashcardsController#update as */*
+  Parameters: {"flashcard"=>{"word"=>"hi", "definition"=>"", "sentence"=>"hi"}, "id"=>"1"}
+  [1m[36mFlashcard Load (0.8ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "flashcards" SET "word" = $1, "definition" = $2, "sentence" = $3, "updated_at" = $4 WHERE "flashcards"."id" = $5[0m  [["word", "hi"], ["definition", ""], ["sentence", "hi"], ["updated_at", "2018-08-30 19:07:48.129788"], ["id", 1]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Flashcard (0.54ms)
+Completed 200 OK in 17ms (Views: 1.3ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 15:08:48 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"hiDEF=greeting", "definition"=>"", "sentence"=>"helloooo"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "sentence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["word", "hiDEF=greeting"], ["definition", ""], ["sentence", "helloooo"], ["created_at", "2018-08-30 19:08:48.966608"], ["updated_at", "2018-08-30 19:08:48.966608"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Flashcard (0.33ms)
+Completed 201 Created in 14ms (Views: 0.8ms | ActiveRecord: 8.2ms)
+
+
+Started DELETE "/flashcards/1" for 127.0.0.1 at 2018-08-30 15:09:54 -0400
+Processing by FlashcardsController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mFlashcard Load (0.5ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (5.3ms)[0m  [1m[31mDELETE FROM "flashcards" WHERE "flashcards"."id" = $1[0m  [["id", 1]]
+Completed 204 No Content in 8ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/flashcards" for 127.0.0.1 at 2018-08-30 15:10:13 -0400
+Processing by FlashcardsController#index as */*
+  [1m[36mFlashcard Load (0.9ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+No serializer found for resource: #<Flashcard id: 2, word: "Adept", definition: "h", sentence: "g", created_at: "2018-08-30 14:56:24", updated_at: "2018-08-30 14:56:24">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Flashcard::ActiveRecord_Relation (1.28ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.9ms)
+
+

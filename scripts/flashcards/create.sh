@@ -2,7 +2,7 @@
 
 curl "http://localhost:4741/flashcards/${ID}" \
   --include \
-  --request PATCH \
+  --request POST \
   --header "Content-Type: application/json" \
   --data '{
     "flashcard": {
