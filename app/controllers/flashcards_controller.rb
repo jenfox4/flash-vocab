@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class FlashcardsController < ProtectedController
-before_action :set_example
+before_action :set_flashcard, only: %i[update, show, destroy]
   # GET /examples
   # GET /examples.json
   def index
-    @flashcards = current_user.Flashcard.all
+    @flashcards = current_user.flashcards.all
 
     render json: @flashcards
   end
@@ -42,7 +42,7 @@ before_action :set_example
     params.require(:flashcard).permit(:word, :definition, :sentence)
   end
 
-  def set_example
+  def set_flashcard
     @flashcard = current_user.flashcards.find(params[:id])
   end
 end

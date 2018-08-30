@@ -438,3 +438,297 @@ DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is depr
   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
   [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jjshj@j"], ["LIMIT", 1]]
   [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/users/sign-up" for 127.0.0.1 at 2018-08-30 15:47:39 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign-up"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users/sign-up/" for 127.0.0.1 at 2018-08-30 15:48:09 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/sign-up"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign-up/" for 127.0.0.1 at 2018-08-30 15:48:21 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"sign-up"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign-up/" for 127.0.0.1 at 2018-08-30 15:48:44 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"sign-up"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign-up/" for 127.0.0.1 at 2018-08-30 15:53:23 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"sign-up"}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign-up/" for 127.0.0.1 at 2018-08-30 15:57:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/sign-up"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-30 16:06:44 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"j@jh", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (3.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "j@jh"], ["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "j@jh"], ["token", "99811f7f905928aa2ec50229f508f482"], ["password_digest", "$2a$10$us4x2VOPTX.xHvtSl5BSeOgwSbu/rGnfwT1G2h.DQpIlsAGqfTuMG"], ["created_at", "2018-08-30 20:06:45.107318"], ["updated_at", "2018-08-30 20:06:45.107318"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "j@jh"], ["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (1.1ms)
+Completed 201 Created in 161ms (Views: 3.7ms | ActiveRecord: 21.9ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 16:09:58 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"j@jh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "j@jh"], ["LIMIT", 1]]
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '7e64eb3c096b3cc5ec109c75193d8bd6', "updated_at" = '2018-08-30 20:09:58.584500' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (4.86ms)
+Completed 200 OK in 118ms (Views: 5.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:11:16 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"hi", "definition"=>"no", "sentence"=>"ghh"}}
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:11:38 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"hi", "definition"=>"no", "sentence"=>"ghh"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7e64eb3c096b3cc5ec109c75193d8bd6"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 404 Not Found in 86ms (Views: 3.8ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:12:19 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"hi", "definition"=>"no", "sentence"=>"ghh"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7e64eb3c096b3cc5ec109c75193d8bd6"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 404 Not Found in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 16:13:20 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"j@jh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "j@jh"], ["LIMIT", 1]]
+  [1m[35mSQL (4.8ms)[0m  [1m[33mUPDATE "users" SET "token" = 'bab091983d556a13a783adf127a30de6', "updated_at" = '2018-08-30 20:13:20.245657' WHERE "users"."id" = $1[0m  [["id", 1]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.27ms)
+Completed 200 OK in 105ms (Views: 0.9ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:13:36 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"hi", "definition"=>"no", "sentence"=>"ghh"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7e64eb3c096b3cc5ec109c75193d8bd6"], ["LIMIT", 1]]
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:14:55 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"hi", "definition"=>"no", "sentence"=>"ghh"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7e64eb3c096b3cc5ec109c75193d8bd6"], ["LIMIT", 1]]
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/sign-out" for 127.0.0.1 at 2018-08-30 16:15:17 -0400
+Processing by UsersController#signout as */*
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/sign-out" for 127.0.0.1 at 2018-08-30 16:15:46 -0400
+Processing by UsersController#signout as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7e64eb3c096b3cc5ec109c75193d8bd6"], ["LIMIT", 1]]
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 3ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-30 16:20:05 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"g@g", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "g@g"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "g@g"], ["token", "68fb6c2e1610039c559026c53cdf8b11"], ["password_digest", "$2a$10$AWNemMDoDOdtJ5v71ip1k.8Lb1DbpKRUtRuSkNrsJyHKIJaESP8QG"], ["created_at", "2018-08-30 20:20:06.065696"], ["updated_at", "2018-08-30 20:20:06.065696"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "g@g"], ["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 201 Created in 150ms (Views: 0.7ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 16:20:25 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"g@g", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "g@g"], ["LIMIT", 1]]
+  [1m[35mSQL (5.5ms)[0m  [1m[33mUPDATE "users" SET "token" = 'a0d86eb4605dd7c8ae6fda73597cbd0b', "updated_at" = '2018-08-30 20:20:25.989960' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.28ms)
+Completed 200 OK in 118ms (Views: 0.8ms | ActiveRecord: 6.0ms)
+
+
+Started DELETE "/sign-out" for 127.0.0.1 at 2018-08-30 16:20:55 -0400
+Processing by UsersController#signout as */*
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "a0d86eb4605dd7c8ae6fda73597cbd0b"], ["LIMIT", 1]]
+  [1m[35mSQL (5.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '43f6775d998811d03687b9f4e7248a0b', "updated_at" = '2018-08-30 20:20:55.515521' WHERE "users"."id" = $1[0m  [["id", 2]]
+Completed 204 No Content in 14ms (ActiveRecord: 7.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 16:21:12 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"g@g", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "g@g"], ["LIMIT", 1]]
+  [1m[35mSQL (4.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '9658a37ee325c5cd0e1c1af3f4494c61', "updated_at" = '2018-08-30 20:21:12.231349' WHERE "users"."id" = $1[0m  [["id", 2]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.24ms)
+Completed 200 OK in 106ms (Views: 0.8ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:22:06 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"h", "definition"=>"h", "sentence"=>"h"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "9658a37ee325c5cd0e1c1af3f4494c61"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 404 Not Found in 4ms (Views: 0.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:24:37 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"h", "definition"=>"h", "sentence"=>"h"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "9658a37ee325c5cd0e1c1af3f4494c61"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `text' for #<Flashcard:0x000055cbf4b53cc0>
+Did you mean?  test):
+  
+app/controllers/flashcards_controller.rb:20:in `create'
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:25:10 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"h", "definition"=>"h", "sentence"=>"h"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "9658a37ee325c5cd0e1c1af3f4494c61"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `text' for #<Flashcard:0x000055cbf467e4e8>
+Did you mean?  test):
+  
+app/controllers/flashcards_controller.rb:20:in `create'
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:26:00 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"h", "definition"=>"h", "sentence"=>"h"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "9658a37ee325c5cd0e1c1af3f4494c61"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ArgumentError (You need to supply at least one validation):
+  
+app/models/flashcard.rb:6:in `<class:Flashcard>'
+app/models/flashcard.rb:4:in `<top (required)>'
+app/controllers/flashcards_controller.rb:18:in `create'
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-30 16:26:15 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"h", "definition"=>"h", "sentence"=>"h"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "9658a37ee325c5cd0e1c1af3f4494c61"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "sentence", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["word", "h"], ["definition", "h"], ["sentence", "h"], ["user_id", 2], ["created_at", "2018-08-30 20:26:15.653983"], ["updated_at", "2018-08-30 20:26:15.653983"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered FlashcardSerializer with ActiveModelSerializers::Adapter::Json (2.32ms)
+Completed 201 Created in 42ms (Views: 4.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/flashcards" for 127.0.0.1 at 2018-08-30 16:27:36 -0400
+Processing by FlashcardsController#index as */*
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "9658a37ee325c5cd0e1c1af3f4494c61"], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (1.1ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards" WHERE "flashcards"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (1.45ms)
+Completed 200 OK in 19ms (Views: 4.8ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/flashcards/1" for 127.0.0.1 at 2018-08-30 16:27:49 -0400
+Processing by FlashcardsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "9658a37ee325c5cd0e1c1af3f4494c61"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.2ms)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 0.7ms)
+
+

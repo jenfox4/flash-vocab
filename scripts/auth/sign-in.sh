@@ -10,5 +10,3 @@ curl "http://localhost:4741/sign-in" \
       "password": "'"${PASSWORD}"'"
     }
   }'
-
-echo

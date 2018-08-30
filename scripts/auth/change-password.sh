@@ -11,5 +11,3 @@ curl "http://localhost:4741/change-password" \
       "new": "'"${NEWPW}"'"
     }
   }'
-
-echo
