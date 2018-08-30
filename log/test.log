@@ -18668,3 +18668,602 @@ Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "sentence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["word", "Adept"], ["definition", "Very skilled or proficient at something"], ["sentence", "He is adept at cutting through red tape."], ["created_at", "2018-08-30 16:13:32.554064"], ["updated_at", "2018-08-30 16:13:32.554064"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by FlashcardsController#index as HTML
+  [1m[36mFlashcard Load (0.5ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+No serializer found for resource: #<Flashcard id: 64, word: "Adept", definition: "Very skilled or proficient at something", sentence: "He is adept at cutting through red tape.", created_at: "2018-08-30 16:13:32", updated_at: "2018-08-30 16:13:32">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Flashcard::ActiveRecord_Relation (0.31ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by FlashcardsController#index as HTML
+  [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+No serializer found for resource: #<Flashcard id: 64, word: "Adept", definition: "Very skilled or proficient at something", sentence: "He is adept at cutting through red tape.", created_at: "2018-08-30 16:13:32", updated_at: "2018-08-30 16:13:32">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Flashcard::ActiveRecord_Relation (0.25ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[36mFlashcard Load (0.6ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlashcard Load (0.2ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Processing by FlashcardsController#show as HTML
+  Parameters: {"id"=>"64"}
+  [1m[36mFlashcard Load (0.3ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Flashcard (11.51ms)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Processing by FlashcardsController#show as HTML
+  Parameters: {"id"=>"64"}
+  [1m[36mFlashcard Load (2.1ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 64], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Flashcard (0.63ms)
+Completed 200 OK in 5ms (Views: 1.4ms | ActiveRecord: 2.1ms)
+  [1m[36mFlashcard Load (0.8ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by FlashcardsController#create as HTML
+  Parameters: {"flashcard"=>{"definition"=>"Very skilled or proficient at something", "sentence"=>"He is adept at cutting through red tape.", "word"=>"Adept"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "sentence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["word", "Adept"], ["definition", "Very skilled or proficient at something"], ["sentence", "He is adept at cutting through red tape."], ["created_at", "2018-08-30 16:13:32.633226"], ["updated_at", "2018-08-30 16:13:32.633226"]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Flashcard (0.53ms)
+Completed 201 Created in 6ms (Views: 1.4ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by FlashcardsController#create as HTML
+  Parameters: {"flashcard"=>{"definition"=>"Very skilled or proficient at something", "sentence"=>"He is adept at cutting through red tape.", "word"=>"Adept"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "sentence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["word", "Adept"], ["definition", "Very skilled or proficient at something"], ["sentence", "He is adept at cutting through red tape."], ["created_at", "2018-08-30 16:13:32.641923"], ["updated_at", "2018-08-30 16:13:32.641923"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Flashcard (0.28ms)
+Completed 201 Created in 3ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+  [1m[36mFlashcard Load (0.2ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[31mDELETE FROM "flashcards"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "a7f1834bb87b359304328562f3be2f58"], ["password_digest", "$2a$04$HR6uUcUqLsLtXlpj3OBRMeMrU447F3QSgjMjPIje2bXshGNZY3y/C"], ["created_at", "2018-08-30 16:13:32.670722"], ["updated_at", "2018-08-30 16:13:32.670722"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 469], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (1.81ms)
+Completed 201 Created in 31ms (Views: 7.8ms | ActiveRecord: 6.1ms)
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "ada9fb893be71ade577a880e3d62387d"], ["password_digest", "$2a$04$ea7nzmcXS7YeisAYNT2IB.Ut7IX5SAT7oSUn/y1lAUMjQVnmS0S3S"], ["created_at", "2018-08-30 16:13:32.691113"], ["updated_at", "2018-08-30 16:13:32.691113"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 470], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.25ms)
+Completed 201 Created in 8ms (Views: 0.7ms | ActiveRecord: 1.1ms)
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "f5a4b6e4768a7cf3b579a7410ddcb006"], ["password_digest", "$2a$04$tPhK4h2n3p4tXNNN3USny.NKE1YsWhAn.BBSHipYUqQACsk7tuvb."], ["created_at", "2018-08-30 16:13:32.702525"], ["updated_at", "2018-08-30 16:13:32.702525"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 471], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.29ms)
+Completed 201 Created in 9ms (Views: 1.0ms | ActiveRecord: 1.5ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '022e4ced80bdb0b8c84ce7110f680fcd', "updated_at" = '2018-08-30 16:13:32.711955' WHERE "users"."id" = $1[0m  [["id", 471]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (4.28ms)
+Completed 200 OK in 13ms (Views: 4.8ms | ActiveRecord: 2.7ms)
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "92fc8e9d5d37e8272e443dbaf2c88faa"], ["password_digest", "$2a$04$BjDE7nVw3hvhA.jnPuTuHeWtRSJC2yCL9Mo0tsB6op9H6QO.HLsTy"], ["created_at", "2018-08-30 16:13:32.730111"], ["updated_at", "2018-08-30 16:13:32.730111"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 472], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.33ms)
+Completed 201 Created in 9ms (Views: 1.0ms | ActiveRecord: 1.6ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'a2c427d8decc8a8332a2a14c4044cf68', "updated_at" = '2018-08-30 16:13:32.738407' WHERE "users"."id" = $1[0m  [["id", 472]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.23ms)
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 2.6ms)
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "11a201a216e38852c4bd1964874b5d0f"], ["password_digest", "$2a$04$Ltn69Z4LmBs1aOceZk1dm.4c4y/7kkK2vIiXahjWsE3oadLU3rMfm"], ["created_at", "2018-08-30 16:13:32.753866"], ["updated_at", "2018-08-30 16:13:32.753866"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 473], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 201 Created in 9ms (Views: 0.7ms | ActiveRecord: 1.7ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "token" = 'c10e37b983acafe9c12b56f3106335ff', "updated_at" = '2018-08-30 16:13:32.760090' WHERE "users"."id" = $1[0m  [["id", 473]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.34ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 2.6ms)
+Processing by UsersController#changepw as JSON
+  Parameters: {"id"=>"473", "passwords"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "c10e37b983acafe9c12b56f3106335ff"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 473], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2018-08-30 16:13:32.775129"], ["password_digest", "$2a$04$8hnwjstLEzQ0R3neafMKuuUt9G54unWHwIFhGldSlBPOGgI4rlxmm"], ["id", 473]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 10ms (Views: 0.9ms | ActiveRecord: 3.8ms)
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "9392f70d8cfb1193e21394e1ee185c57"], ["password_digest", "$2a$04$lX9paucnJQ2.tRwZy2RlsOt7oTriK6rdZdk8UnRJoCnigi02yEZJu"], ["created_at", "2018-08-30 16:13:32.784222"], ["updated_at", "2018-08-30 16:13:32.784222"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 474], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.27ms)
+Completed 201 Created in 8ms (Views: 0.9ms | ActiveRecord: 1.5ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "token" = 'b5ba52ceea170f54cad5419d62bf2bd8', "updated_at" = '2018-08-30 16:13:32.792993' WHERE "users"."id" = $1[0m  [["id", 474]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.38ms)
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 2.8ms)
+Processing by UsersController#changepw as JSON
+  Parameters: {"id"=>"474", "passwords"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "b5ba52ceea170f54cad5419d62bf2bd8"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 474], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2018-08-30 16:13:32.809271"], ["password_digest", "$2a$04$OQ.GA1uVyJs7HONPY5h6BuNGZpydUVmeT1z.LJIK80BEAAHvvL/hy"], ["id", 474]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 13ms (Views: 1.4ms | ActiveRecord: 5.1ms)
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "bf14558e795f12e1aacd7f14a5afed65"], ["password_digest", "$2a$04$znpjfyo/rqmTRm9lOBYSH.rdGPxQiVcxOM0IKl2I1Xfh/uIf0XKlS"], ["created_at", "2018-08-30 16:13:32.822408"], ["updated_at", "2018-08-30 16:13:32.822408"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 475], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.31ms)
+Completed 201 Created in 10ms (Views: 0.8ms | ActiveRecord: 1.8ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '75db2939125bf72940ea6efb7c06b06e', "updated_at" = '2018-08-30 16:13:32.831498' WHERE "users"."id" = $1[0m  [["id", 475]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.4ms)
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 3.1ms)
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"foobarbaz@f"}, "id"=>"475"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "75db2939125bf72940ea6efb7c06b06e"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 475], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "foobarbaz@f"], ["id", 475], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "email" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2018-08-30 16:13:32.845199"], ["email", "foobarbaz@f"], ["id", 475]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.38ms)
+Completed 200 OK in 11ms (Views: 1.0ms | ActiveRecord: 5.5ms)
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "b5e168631e81f7862832b17258585635"], ["password_digest", "$2a$04$FSNSoLUWanaO8QlyVrij3eqqOtXoCDVdrO8vZlro3/gHtwEFnGve6"], ["created_at", "2018-08-30 16:13:32.860273"], ["updated_at", "2018-08-30 16:13:32.860273"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 476], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.28ms)
+Completed 201 Created in 8ms (Views: 0.9ms | ActiveRecord: 1.3ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "token" = '6666d450c76e98ac7c621bb95aa5bf2b', "updated_at" = '2018-08-30 16:13:32.867062' WHERE "users"."id" = $1[0m  [["id", 476]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.35ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 2.2ms)
+Processing by UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"foobarbaz@f"}, "id"=>"476"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "6666d450c76e98ac7c621bb95aa5bf2b"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 476], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "foobarbaz@f"], ["id", 476], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "email" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2018-08-30 16:13:32.882147"], ["email", "foobarbaz@f"], ["id", 476]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.31ms)
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 4.7ms)
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "2a5f6785cf923ff8cdf479fe67063521"], ["password_digest", "$2a$04$fbGimL5a6vN6nMkbFLGhAea0g5IKn7GR6AAbGyNenoHZPAkKDzG/O"], ["created_at", "2018-08-30 16:13:32.893934"], ["updated_at", "2018-08-30 16:13:32.893934"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 477], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.35ms)
+Completed 201 Created in 9ms (Views: 1.2ms | ActiveRecord: 1.5ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "token" = 'f97b39fd83d02292719c40cab18e7ab7', "updated_at" = '2018-08-30 16:13:32.902359' WHERE "users"."id" = $1[0m  [["id", 477]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.25ms)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 2.3ms)
+Processing by UsersController#signout as JSON
+  Parameters: {"id"=>"477"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "f97b39fd83d02292719c40cab18e7ab7"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "token" = '9ed57d54cae3625a83d10991b4d21b48', "updated_at" = '2018-08-30 16:13:32.908793' WHERE "users"."id" = $1[0m  [["id", 477]]
+Completed 204 No Content in 3ms (Views: 0.7ms | ActiveRecord: 3.0ms)
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "d5d8fc8558b403111800639489a7f674"], ["password_digest", "$2a$04$ZfGXMjWpFjn12xuf49m8Wu8.qpfJXKs2cRCl3WwysBGEaIu0JgncC"], ["created_at", "2018-08-30 16:13:32.923016"], ["updated_at", "2018-08-30 16:13:32.923016"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 478], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.27ms)
+Completed 201 Created in 10ms (Views: 0.8ms | ActiveRecord: 1.7ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "token" = 'c8054cfb20d046d3653a11c1f74ed533', "updated_at" = '2018-08-30 16:13:32.931253' WHERE "users"."id" = $1[0m  [["id", 478]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.3ms)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 2.9ms)
+Processing by UsersController#signout as JSON
+  Parameters: {"id"=>"478"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "c8054cfb20d046d3653a11c1f74ed533"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "token" = '0a703386a2ca3afe0924be27e803f14f', "updated_at" = '2018-08-30 16:13:32.938747' WHERE "users"."id" = $1[0m  [["id", 478]]
+Completed 204 No Content in 3ms (Views: 1.3ms | ActiveRecord: 3.9ms)
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "31cecb8ee0921cd57b9260ca6c03cf44"], ["password_digest", "$2a$04$gD6GtOag4HsscPPy72YQDel0gKNxY.Ypth3RVCsoEC8D/.3PxXxrq"], ["created_at", "2018-08-30 16:13:32.950038"], ["updated_at", "2018-08-30 16:13:32.950038"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 479], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.55ms)
+Completed 201 Created in 12ms (Views: 1.9ms | ActiveRecord: 1.8ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "token" = 'c2e8ba4e70654423d36e976ecefe8c71', "updated_at" = '2018-08-30 16:13:32.961037' WHERE "users"."id" = $1[0m  [["id", 479]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.29ms)
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 3.5ms)
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "c2e8ba4e70654423d36e976ecefe8c71"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.47ms)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 4.4ms)
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "b479c86fa12e7e04ab3df5c637a3f7c0"], ["password_digest", "$2a$04$WKmzHnZM2cELRN6jOYigKODnvtHHvdea6obpjH6lROBkVu0ujUWdq"], ["created_at", "2018-08-30 16:13:32.981669"], ["updated_at", "2018-08-30 16:13:32.981669"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 480], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.33ms)
+Completed 201 Created in 9ms (Views: 1.0ms | ActiveRecord: 1.7ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "token" = 'fee32698bd9a441afe9f4821e60ecf79', "updated_at" = '2018-08-30 16:13:32.990309' WHERE "users"."id" = $1[0m  [["id", 480]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.38ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 2.8ms)
+Processing by UsersController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "fee32698bd9a441afe9f4821e60ecf79"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.58ms)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 3.7ms)
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "697388553c86f7a9b6c665e5a25941ce"], ["password_digest", "$2a$04$Etuc6XdFs51j/YUAqldxS.CX32iURu9x7sV2srP7ksRVzHR9SBtYW"], ["created_at", "2018-08-30 16:13:33.010550"], ["updated_at", "2018-08-30 16:13:33.010550"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 481], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.44ms)
+Completed 201 Created in 10ms (Views: 1.2ms | ActiveRecord: 1.5ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "users" SET "token" = 'ee76a6d591151817a6deb8f65f1cac57', "updated_at" = '2018-08-30 16:13:33.020497' WHERE "users"."id" = $1[0m  [["id", 481]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.73ms)
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 3.0ms)
+Processing by UsersController#index as JSON
+  Parameters: {"id"=>"481"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "ee76a6d591151817a6deb8f65f1cac57"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.52ms)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 4.2ms)
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsersController#signup as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "a96d584a2851554c7b56fd4f7a402efd"], ["password_digest", "$2a$04$yAYaMkEhBPoNxQRgXbZTees21O6A3C83Ndglf3/vPkk0.CdOGDrny"], ["created_at", "2018-08-30 16:13:33.054271"], ["updated_at", "2018-08-30 16:13:33.054271"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 482], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.3ms)
+Completed 201 Created in 11ms (Views: 1.0ms | ActiveRecord: 2.0ms)
+Processing by UsersController#signin as JSON
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '7bf719a89d9d35af9763e0baf6de9136', "updated_at" = '2018-08-30 16:13:33.063234' WHERE "users"."id" = $1[0m  [["id", 482]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.39ms)
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 3.1ms)
+Processing by UsersController#index as JSON
+  Parameters: {"id"=>"482"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7bf719a89d9d35af9763e0baf6de9136"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.47ms)
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 4.7ms)
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "sentence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["word", "Adept"], ["definition", "Very skilled or proficient at something"], ["sentence", "He is adept at cutting through red tape."], ["created_at", "2018-08-30 16:13:33.080315"], ["updated_at", "2018-08-30 16:13:33.080315"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Started GET "/flashcards" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by FlashcardsController#index as HTML
+  [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+No serializer found for resource: #<Flashcard id: 67, word: "Adept", definition: "Very skilled or proficient at something", sentence: "He is adept at cutting through red tape.", created_at: "2018-08-30 16:13:33", updated_at: "2018-08-30 16:13:33">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Flashcard::ActiveRecord_Relation (0.25ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "flashcards"[0m
+  [1m[36mFlashcard Load (0.6ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlashcard Load (0.3ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/flashcards/67" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by FlashcardsController#show as HTML
+  Parameters: {"id"=>"67"}
+  [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 67], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Flashcard (0.42ms)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[36mFlashcard Load (0.3ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/flashcards" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by FlashcardsController#create as HTML
+  Parameters: {"flashcard"=>{"word"=>"Adept", "definition"=>"Very skilled or proficient at something", "sentence"=>"He is adept at cutting through red tape."}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "sentence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["word", "Adept"], ["definition", "Very skilled or proficient at something"], ["sentence", "He is adept at cutting through red tape."], ["created_at", "2018-08-30 16:13:33.111180"], ["updated_at", "2018-08-30 16:13:33.111180"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Flashcard (0.45ms)
+Completed 201 Created in 4ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+  [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started PATCH "/flashcards" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[31mDELETE FROM "flashcards"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signup as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "326b52b379b4cfc544e09fb923231140"], ["password_digest", "$2a$04$Qe49VVrlo9oAVmCV4S0WVu9G6G7rkxPVIXCMdPKbcVLzn.TR3.xQu"], ["created_at", "2018-08-30 16:13:33.137936"], ["updated_at", "2018-08-30 16:13:33.137936"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 483], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.34ms)
+Completed 201 Created in 11ms (Views: 0.9ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signup as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "97007759f6f97a1d074921be1cddbb6e"], ["password_digest", "$2a$04$sMV5ZR5IGG6XjxVIMK8nVu8G8pY0KeL.a6zJMlRw8fiCzKf0O9/bO"], ["created_at", "2018-08-30 16:13:33.150211"], ["updated_at", "2018-08-30 16:13:33.150211"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 484], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.34ms)
+Completed 201 Created in 14ms (Views: 1.0ms | ActiveRecord: 4.5ms)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signin as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "token" = 'a850714433dd18f1ca6de79032097ecd', "updated_at" = '2018-08-30 16:13:33.166219' WHERE "users"."id" = $1[0m  [["id", 484]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.28ms)
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 1.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signup as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.1ms)
+Completed 400 Bad Request in 18ms (Views: 2.5ms | ActiveRecord: 1.6ms)
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signin as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '165d727d11af1fb02e85e213c2b69570', "updated_at" = '2018-08-30 16:13:33.200352' WHERE "users"."id" = $1[0m  [["id", 484]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.31ms)
+Completed 200 OK in 8ms (Views: 0.9ms | ActiveRecord: 1.1ms)
+Started PATCH "/change-password/" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#changepw as HTML
+  Parameters: {"passwords"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "165d727d11af1fb02e85e213c2b69570"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 484], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2018-08-30 16:13:33.218192"], ["password_digest", "$2a$04$zXrYglKIS.3ig7a9Lxjj2etFMy/GfgJ./8jiWyqjE6xf7.lLd/gQu"], ["id", 484]]
+  [1m[35m (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 13ms (ActiveRecord: 2.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signup as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.08ms)
+Completed 400 Bad Request in 8ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signin as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "token" = 'aeefd47033aa7d5a0e78771a98b99f9f', "updated_at" = '2018-08-30 16:13:33.235408' WHERE "users"."id" = $1[0m  [["id", 484]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.36ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.8ms)
+Started DELETE "/sign-out/" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signout as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "aeefd47033aa7d5a0e78771a98b99f9f"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '75276d7f7473de8201ac0cb3ba92b584', "updated_at" = '2018-08-30 16:13:33.243574' WHERE "users"."id" = $1[0m  [["id", 484]]
+Completed 204 No Content in 3ms (ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signup as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 400 Bad Request in 8ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signin as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "token" = 'a2a0a9a4b849993dc0524a62334255ab', "updated_at" = '2018-08-30 16:13:33.263512' WHERE "users"."id" = $1[0m  [["id", 484]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.36ms)
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+Started DELETE "/sign-out/" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signout as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "a2a0a9a4b849993dc0524a62334255ab"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '2451c3e0acc31d6a01c49227a14b0e16', "updated_at" = '2018-08-30 16:13:33.272475' WHERE "users"."id" = $1[0m  [["id", 484]]
+Completed 204 No Content in 3ms (ActiveRecord: 0.7ms)
+Started DELETE "/sign-out/" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signout as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "a2a0a9a4b849993dc0524a62334255ab"], ["LIMIT", 1]]
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signup as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "0bf3f098c5e7eb3e6ac970ca99694ae8"], ["password_digest", "$2a$04$5twlg01P54BnTkFaa0fASexyU6hwh4L.zhi9WdBr9KDAIIFJtbN8."], ["created_at", "2018-08-30 16:13:33.291563"], ["updated_at", "2018-08-30 16:13:33.291563"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 485], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.74ms)
+Completed 201 Created in 11ms (Views: 1.7ms | ActiveRecord: 1.8ms)
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signin as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'a754e466ad677a89b37bea00255276d2', "updated_at" = '2018-08-30 16:13:33.301130' WHERE "users"."id" = $1[0m  [["id", 485]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.48ms)
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 1.2ms)
+Started GET "/users" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "a754e466ad677a89b37bea00255276d2"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (0.54ms)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.1ms)
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signup as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "alice@example.com"], ["token", "9539b57d91cc9fd27b60995fa097d789"], ["password_digest", "$2a$04$kUAJV66/6M2BG135hT4awuM.JN6OuqaNpkeN/9RJV.k8ILxgKRUqG"], ["created_at", "2018-08-30 16:13:33.328410"], ["updated_at", "2018-08-30 16:13:33.328410"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "alice@example.com"], ["id", 486], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.73ms)
+Completed 201 Created in 14ms (Views: 2.0ms | ActiveRecord: 2.3ms)
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#signin as HTML
+  Parameters: {"credentials"=>{"email"=>"alice@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "alice@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "token" = '2085a63de9dcc63ab894af382f777f42', "updated_at" = '2018-08-30 16:13:33.343147' WHERE "users"."id" = $1[0m  [["id", 486]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.28ms)
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 1.4ms)
+Started GET "/users/486" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"486"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "2085a63de9dcc63ab894af382f777f42"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 486], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.28ms)
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/users/" for 127.0.0.1 at 2018-08-30 12:13:33 -0400
+Processing by UsersController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

@@ -16,6 +16,14 @@ RSpec.describe 'routes for flashcards' do
     end
 
   it 'routes POST /flashcards to the flashcards#create action' do
-    expect(:post => ('/flashcards')).to route_to ('flashcards#create')
+    expect(:post => ('/flashcards')).to route_to('flashcards#create')
   end
+
+  it 'routes PATCH /flashcards to the flashcards#update action' do
+    expect(:patch => ('/flashcards/2')).to route_to(
+      controller: 'Flashcards',
+      action: 'update',
+      id: '2'
+    )
+  end 
 end
