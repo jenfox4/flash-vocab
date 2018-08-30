@@ -26,4 +26,12 @@ RSpec.describe 'routes for flashcards' do
       id: '2'
     )
   end
+
+  it 'routes DELETE /flashcards to the flashcards#delete action' do
+    expect(:delete => ('/flashcard/3')).to route_to(
+      controller: 'flashcards',
+      action: 'destroy',
+      id: '3'
+    )
+  end
 end

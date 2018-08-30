@@ -49,3 +49,5 @@ DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is depr
   [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "flashcards" SET "sentence" = $1, "updated_at" = $2 WHERE "flashcards"."id" = $3[0m  [["sentence", "hhh"], ["updated_at", "2018-08-30 16:25:22.453965"], ["id", 1]]
   [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mFlashcard Load (0.8ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
