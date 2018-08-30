@@ -21,9 +21,9 @@ RSpec.describe 'routes for flashcards' do
 
   it 'routes PATCH /flashcards to the flashcards#update action' do
     expect(:patch => ('/flashcards/2')).to route_to(
-      controller: 'Flashcards',
+      controller: 'flashcards',
       action: 'update',
       id: '2'
     )
-  end 
+  end
 end
