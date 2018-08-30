@@ -49,4 +49,19 @@ RSpec.describe FlashcardsController do
       end
     end
 
+    describe 'POST create' do
+      before(:each) do
+        post :create, params: {flashcard: flashcard_params}
+      end
+      it 'is successful' do
+        expect(response.status).to eq(201)
+      end
+
+      it 'renders a JSON response' do
+        flashcards_response = JSON.parse(response.body)
+        expect(flashcards_response).not_to be_nil
+        expect(flashcards_response['name']).to eq(flashcard['name'])
+      end
+    end
+
 end

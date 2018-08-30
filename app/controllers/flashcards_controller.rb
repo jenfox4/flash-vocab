@@ -16,7 +16,18 @@ class FlashcardsController < ApplicationController
     render json: @flashcard
   end
 
+  def create
+    @flashcard = Flashcard.new(flashcard_params)
+
+    if @flashcard.save
+      render json: @flashcard, status: :created
+    else
+      render json: @flashcard.errors, status: :unprocessable_entity
+    end
+  end
+
+
   def flashcard_params
-    params.requre(:flashcard).permit(:word, :definition, :sentence)
+    params.require(:flashcard).permit(:word, :definition, :sentence)
   end
 end

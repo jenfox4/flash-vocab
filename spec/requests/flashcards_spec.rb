@@ -48,7 +48,7 @@ RSpec.describe 'Flashcards API' do
 
   describe 'POST /flashcards/' do
     it 'create a new flashcard' do
-      post "/articles", params: {flashcard: flashcard_params}
+      post "/flashcards", params: {flashcard: flashcard_params}
 
       flashcards_response = JSON.parse(response.body)
       expect(flashcards_response['name']).to eq(flashcard['name'])
