@@ -64,4 +64,22 @@ RSpec.describe FlashcardsController do
       end
     end
 
+    describe 'PATCH update' do
+      def sentence_diff
+        {sentence: 'She is adept at throwing an arrow'}
+      end
+
+      before(:each) do
+        patch :update, params: {id: flashcard.id, flashcard: sentence_diff}
+      end
+
+      it 'is successful' do
+        expect(response.status).to eq(200)
+      end
+
+      it 'renders a JSON response' do
+        flashcards_response = JSON.parse(response.body)
+        expect(flashcards_response['sentence']).to eq(flashcard['sentence'])
+      end
+    end
 end
