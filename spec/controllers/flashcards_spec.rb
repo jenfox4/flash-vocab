@@ -81,5 +81,14 @@ RSpec.describe FlashcardsController do
         flashcards_response = JSON.parse(response.body)
         expect(flashcards_response['sentence']).to eq(flashcard['sentence'])
       end
+    end 
+
+    describe 'DELETE destroy' do
+      it 'is successful and returns an empty response' do
+        delete :destroy, params: {id: flashcard.id}
+        expect(response.body).to be_empty
+        expect(flashcard).to be_nil
+      end
     end
+
 end
