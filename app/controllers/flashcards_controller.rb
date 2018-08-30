@@ -28,7 +28,7 @@ class FlashcardsController < ApplicationController
 
   def update
     @flashcard = Flashcard.find(params[:id])
-    
+
     if @flashcard.update(flashcard_params)
       render json: @flashcard
     else
@@ -36,7 +36,14 @@ class FlashcardsController < ApplicationController
     end
   end
 
+  def destroy
+    @flashcard = Flashcard.find(params[:id])
 
+    @flashcard.delete
+
+    head :no_content
+  end
+  
   def flashcard_params
     params.require(:flashcard).permit(:word, :definition, :sentence)
   end
