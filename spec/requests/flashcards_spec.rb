@@ -55,11 +55,11 @@ RSpec.describe 'Flashcards API' do
     end
   end
 
-  describe 'PATCH /flashcards/'do
+  describe 'PATCH /flashcards/:id'do
     it 'create a new flashcard' do
-      patch '/flashcards', params: {flashcard: flashcard_params}
+      patch "/flashcards/#{flashcard.id}", params: {flashcard: flashcard_params}
 
-      lashcards_response = JSON.parse(response.body)
+      flashcards_response = JSON.parse(response.body)
       expect(flashcards_response['id']).to eq(flashcard.id)
     end
   end
