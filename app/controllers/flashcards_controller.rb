@@ -1,23 +1,21 @@
 # frozen_string_literal: true
 
-class FlashcardsController < ApplicationController
-
+class FlashcardsController < ProtectedController
+before_action :set_example
   # GET /examples
   # GET /examples.json
   def index
-    @flashcards = Flashcard.all
+    @flashcards = current_user.Flashcard.all
 
     render json: @flashcards
   end
 
   def show
-    @flashcard = Flashcard.find(params[:id])
-
     render json: @flashcard
   end
 
   def create
-    @flashcard = Flashcard.new(flashcard_params)
+    @flashcard = current_user.flashcards.build(flashcard_params)
 
     if @flashcard.save
       render json: @flashcard, status: :created
@@ -27,8 +25,6 @@ class FlashcardsController < ApplicationController
   end
 
   def update
-    @flashcard = Flashcard.find(params[:id])
-
     if @flashcard.update(flashcard_params)
       render json: @flashcard
     else
@@ -37,14 +33,16 @@ class FlashcardsController < ApplicationController
   end
 
   def destroy
-    @flashcard = Flashcard.find(params[:id])
-
     @flashcard.delete
 
     head :no_content
   end
-  
+
   def flashcard_params
     params.require(:flashcard).permit(:word, :definition, :sentence)
+  end
+
+  def set_example
+    @flashcard = current_user.flashcards.find(params[:id])
   end
 end
