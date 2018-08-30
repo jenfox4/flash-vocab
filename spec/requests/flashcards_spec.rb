@@ -64,4 +64,12 @@ RSpec.describe 'Flashcards API' do
     end
   end
 
+  describe 'DELETE /flashcards/:id' do
+    it 'delete a flashcard' do
+      delete "/flashcards/#{flashcard.id}"
+      expect(response).to be_success
+      expect(flashcard).to be_nil
+    end
+  end 
+
 end
