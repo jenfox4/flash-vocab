@@ -7,8 +7,6 @@ curl "http://localhost:4741/myflashcards/${ID}" \
   --header "Content-Type: application/json" \
   --data '{
     "myflashcard": {
-      "user_id": "'"${USER}"'",
-      "flashcard_id": "'"${VOCAB}"'",
       "sentence": "'"${SEN}"'"
     }
   }'

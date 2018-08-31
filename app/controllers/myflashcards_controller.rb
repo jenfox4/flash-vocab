@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class MyflashcardsController < ProtectedController
-  before_action :set_myflashcard, only: %i[:show :update :destroy]
+  before_action :set_myflashcard, only: %i[update show destroy]
 
   # GET /myflashcards
   def index
@@ -45,6 +45,7 @@ class MyflashcardsController < ProtectedController
     # Use callbacks to share common setup or constraints between actions.
     def set_myflashcard
       @myflashcard = current_user.myflashcards.find(params[:id])
+      # binding.pry
     end
 
     # Only allow a trusted parameter "white list" through.
