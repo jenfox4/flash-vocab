@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class FlashcardsController < ProtectedController
-before_action :set_flashcard, only: %i[update, show, destroy]
+before_action :set_flashcard, only: %i[update show destroy]
   # GET /examples
   # GET /examples.json
   def index

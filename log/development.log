@@ -740,3 +740,126 @@ DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is depr
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+Started GET "/" for ::1 at 2018-08-31 10:08:26 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jen/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jen/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/flashcards" for ::1 at 2018-08-31 10:08:34 -0400
+Processing by FlashcardsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 10:09:12 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"j@j", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "j@j"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 30ms (ActiveRecord: 7.2ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-31 10:09:22 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"j@j", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "j@j"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "j@j"], ["token", "92c57eb414cfae8088ba90de20329b81"], ["password_digest", "$2a$10$VtyLIbuVBghAJ5/UDLKfY.7Tu1dFwUlrpeU0VZ//kdU7PvhbV9VBC"], ["created_at", "2018-08-31 14:09:22.453057"], ["updated_at", "2018-08-31 14:09:22.453057"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "j@j"], ["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (1.06ms)
+Completed 201 Created in 166ms (Views: 9.5ms | ActiveRecord: 18.0ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 10:09:25 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"j@j", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "j@j"], ["LIMIT", 1]]
+  [1m[35mSQL (5.6ms)[0m  [1m[33mUPDATE "users" SET "token" = '48a57835e107f6b22145b89c31655a0d', "updated_at" = '2018-08-31 14:09:25.369802' WHERE "users"."id" = $1[0m  [["id", 3]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (3.31ms)
+Completed 200 OK in 103ms (Views: 3.8ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/flashcards/" for 127.0.0.1 at 2018-08-31 10:10:07 -0400
+Processing by FlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"word"=>"hello", "definition"=>"h", "sentence"=>"h"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "48a57835e107f6b22145b89c31655a0d"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "sentence", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["word", "hello"], ["definition", "h"], ["sentence", "h"], ["user_id", 3], ["created_at", "2018-08-31 14:10:07.209788"], ["updated_at", "2018-08-31 14:10:07.209788"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered FlashcardSerializer with ActiveModelSerializers::Adapter::Json (1.39ms)
+Completed 201 Created in 60ms (Views: 18.7ms | ActiveRecord: 9.8ms)
+
+
+Started PATCH "/flashcards/3" for 127.0.0.1 at 2018-08-31 10:10:32 -0400
+Processing by FlashcardsController#update as */*
+  Parameters: {"flashcard"=>{"word"=>"hi", "definition"=>"", "sentence"=>""}, "id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "48a57835e107f6b22145b89c31655a0d"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/flashcards_controller.rb:28:in `update'
+Started PATCH "/flashcards/3" for 127.0.0.1 at 2018-08-31 10:11:45 -0400
+Processing by FlashcardsController#update as */*
+  Parameters: {"flashcard"=>{"word"=>"hi", "definition"=>"", "sentence"=>""}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "48a57835e107f6b22145b89c31655a0d"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 5.0ms)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/flashcards_controller.rb:28:in `update'
+Started PATCH "/flashcards/3" for 127.0.0.1 at 2018-08-31 10:12:11 -0400
+Processing by FlashcardsController#update as */*
+  Parameters: {"flashcard"=>{"word"=>"hi", "definition"=>"", "sentence"=>""}, "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "48a57835e107f6b22145b89c31655a0d"], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (0.5ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards" WHERE "flashcards"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mFlashcard Load (2.0ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."user_id" = $1 AND "flashcards"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 98250ms (ActiveRecord: 8.1ms)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/flashcards_controller.rb:29:in `update'
+Started GET "/flashcards/3" for 127.0.0.1 at 2018-08-31 10:14:07 -0400
+Processing by FlashcardsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "48a57835e107f6b22145b89c31655a0d"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.1ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flashcards/3" for 127.0.0.1 at 2018-08-31 10:15:00 -0400
+Processing by FlashcardsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "48a57835e107f6b22145b89c31655a0d"], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (0.6ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."user_id" = $1 AND "flashcards"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered FlashcardSerializer with ActiveModelSerializers::Adapter::Json (2.28ms)
+Completed 200 OK in 7284ms (Views: 3.6ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/flashcards/3" for 127.0.0.1 at 2018-08-31 10:17:40 -0400
+Processing by FlashcardsController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "48a57835e107f6b22145b89c31655a0d"], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."user_id" = $1 AND "flashcards"."id" = $2 LIMIT $3[0m  [["user_id", 3], ["id", 3], ["LIMIT", 1]]
+[active_model_serializers] Rendered FlashcardSerializer with ActiveModelSerializers::Adapter::Json (2.27ms)
+Completed 200 OK in 30ms (Views: 3.9ms | ActiveRecord: 0.7ms)
+
+
