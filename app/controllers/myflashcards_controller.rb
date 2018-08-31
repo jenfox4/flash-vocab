@@ -49,6 +49,6 @@ class MyflashcardsController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def myflashcard_params
-      params.require(:myflashcard).permit(:user_id, :flashcards_id, :sentence)
+      params.require(:myflashcard).permit(:user_id, :flashcard_id, :sentence)
     end
 end

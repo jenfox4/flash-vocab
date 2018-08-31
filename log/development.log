@@ -2161,3 +2161,82 @@ Unpermitted parameter: :flashcard_id
 Completed 422 Unprocessable Entity in 6ms (Views: 0.5ms | ActiveRecord: 0.6ms)
 
 
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:50:21 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"10", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Unpermitted parameter: :flashcard_id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:50:51 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Unpermitted parameter: :flashcard_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.13ms)
+Completed 422 Unprocessable Entity in 6ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:52:29 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcards_id"=>"10", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'flashcards_id' for Myflashcard.):
+  
+app/controllers/myflashcards_controller.rb:21:in `create'
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:53:54 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"10", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlashcard Load (0.3ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.14ms)
+Completed 422 Unprocessable Entity in 47ms (Views: 2.8ms | ActiveRecord: 11.7ms)
+
+
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:54:15 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"9", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 422 Unprocessable Entity in 7ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:54:25 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlashcard Load (0.3ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "myflashcards" ("user_id", "flashcard_id", "sentence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 9], ["flashcard_id", 1], ["sentence", "hi"], ["created_at", "2018-08-31 19:54:25.956288"], ["updated_at", "2018-08-31 19:54:25.956288"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered MyflashcardSerializer with ActiveModelSerializers::Adapter::Json (4.51ms)
+Completed 201 Created in 23ms (Views: 6.5ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:54:37 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"2", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFlashcard Load (0.3ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "myflashcards" ("user_id", "flashcard_id", "sentence", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 9], ["flashcard_id", 2], ["sentence", "hi"], ["created_at", "2018-08-31 19:54:37.469388"], ["updated_at", "2018-08-31 19:54:37.469388"]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+[active_model_serializers] Rendered MyflashcardSerializer with ActiveModelSerializers::Adapter::Json (0.71ms)
+Completed 201 Created in 14ms (Views: 1.4ms | ActiveRecord: 6.9ms)
+
+
