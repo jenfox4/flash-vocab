@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :myflashcards
+  resources :studies
+  resources :user_flashcards, only: %i[index show create update destroy]
   # RESTful routes
   resources :examples, except: %i[new edit]
   resources :users, only: %i[index show update]

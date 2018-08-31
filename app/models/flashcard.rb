@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 class Flashcard < ApplicationRecord
-  belongs_to :user
+  has_many :Myflashcards
+  has_many :Users, through: :Myflashcards
 end

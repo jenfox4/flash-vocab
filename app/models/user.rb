@@ -2,5 +2,6 @@
 
 class User < ApplicationRecord
   include Authentication
-  has_many :flashcards
+  has_many :Myflashcards
+  has_many :Flashcards, through: :Myflashcards
 end

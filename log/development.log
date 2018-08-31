@@ -863,3 +863,763 @@ Processing by FlashcardsController#show as */*
 Completed 200 OK in 30ms (Views: 3.9ms | ActiveRecord: 0.7ms)
 
 
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+Started GET "/" for ::1 at 2018-08-31 10:26:24 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jen/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jen/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 10:26:36 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"testing123@test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testing123@test"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 28ms (ActiveRecord: 11.0ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 10:26:44 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"testing123@test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testing123@test"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.5ms)
+
+
+Started POST "/sign-up" for ::1 at 2018-08-31 10:26:56 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"testing123@test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testing123@test"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "testing123@test"], ["token", "5fe6087b815c829e320a74a5d028018f"], ["password_digest", "$2a$10$1.m4DHm2nzzss1ZIkFUK6.d.x1UT3dcwVcna1akHL5wRCWu2cUTSW"], ["created_at", "2018-08-31 14:26:56.886787"], ["updated_at", "2018-08-31 14:26:56.886787"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "testing123@test"], ["id", 4], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (1.09ms)
+Completed 201 Created in 203ms (Views: 9.6ms | ActiveRecord: 23.5ms)
+
+
+Started POST "/sign-up" for ::1 at 2018-08-31 10:28:26 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"hi@h", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hi@h"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "hi@h"], ["token", "ec21c32161995214905ee23b44168341"], ["password_digest", "$2a$10$n5Wf6TUQwP1epqGYwdeplOdHwFS9Oz2ZAZlQTTXkRFfP.wUN.JMvm"], ["created_at", "2018-08-31 14:28:27.060322"], ["updated_at", "2018-08-31 14:28:27.060322"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "hi@h"], ["id", 5], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.32ms)
+Completed 201 Created in 113ms (Views: 1.0ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/sign-up" for ::1 at 2018-08-31 10:29:07 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"hello@123", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@123"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@123"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.09ms)
+Completed 400 Bad Request in 158ms (Views: 5.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/sign-up" for ::1 at 2018-08-31 10:29:11 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"hello@123", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hello@123"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "hello@123"], ["token", "91e292136479924d4edc9d3d377e3da6"], ["password_digest", "$2a$10$BOF9iBL6hdMawat3B1aSjeCXjtxhCOxPo24T7MVCu0MwgLxWhbI4m"], ["created_at", "2018-08-31 14:29:11.346417"], ["updated_at", "2018-08-31 14:29:11.346417"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "hello@123"], ["id", 6], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.37ms)
+Completed 201 Created in 116ms (Views: 1.1ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/sign-up" for ::1 at 2018-08-31 10:29:49 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"me@m", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "me@m"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "me@m"], ["token", "c2e3dce8d69043390b8039d76fcf8bb0"], ["password_digest", "$2a$10$9NBDTvI2dS4I.Y1qvLiN5.8CEdQVvL.lT2ULPoxMXulZOfzofdn4."], ["created_at", "2018-08-31 14:29:49.263041"], ["updated_at", "2018-08-31 14:29:49.263041"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "me@m"], ["id", 7], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.35ms)
+Completed 201 Created in 169ms (Views: 0.9ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 10:35:39 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"testing123@test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testing123@test"], ["LIMIT", 1]]
+  [1m[35mSQL (3.4ms)[0m  [1m[33mUPDATE "users" SET "token" = '57ad834ecf1dfc0727f48b2800b88bdf', "updated_at" = '2018-08-31 14:35:39.141171' WHERE "users"."id" = $1[0m  [["id", 4]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (3.17ms)
+Completed 200 OK in 154ms (Views: 3.6ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 10:35:40 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"testing123@test", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testing123@test"], ["LIMIT", 1]]
+  [1m[35mSQL (6.2ms)[0m  [1m[33mUPDATE "users" SET "token" = '91874564b052ed5cb4dfb40d442a52ff', "updated_at" = '2018-08-31 14:35:40.812993' WHERE "users"."id" = $1[0m  [["id", 4]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.27ms)
+Completed 200 OK in 115ms (Views: 0.8ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/sign-up" for ::1 at 2018-08-31 11:11:23 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"h@h", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@h"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "h@h"], ["token", "8518e18bb3c8a6edb47b6db2750c0c06"], ["password_digest", "$2a$10$b4HYM1TOwXdftJd2Rux4/edrvpH1dmLn5axDQ/KOoIz0pT3rU7c4e"], ["created_at", "2018-08-31 15:11:23.285206"], ["updated_at", "2018-08-31 15:11:23.285206"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "h@h"], ["id", 8], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.31ms)
+Completed 201 Created in 159ms (Views: 0.9ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 11:21:04 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"h@h", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@h"], ["LIMIT", 1]]
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '00fcf45679d35d1cf0cb7dd738160835', "updated_at" = '2018-08-31 15:21:04.170258' WHERE "users"."id" = $1[0m  [["id", 8]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.44ms)
+Completed 200 OK in 154ms (Views: 1.1ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 11:21:05 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"h@h", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@h"], ["LIMIT", 1]]
+  [1m[35mSQL (5.0ms)[0m  [1m[33mUPDATE "users" SET "token" = 'c98f2edc5917c9c24b3efdbfb71fd673', "updated_at" = '2018-08-31 15:21:05.817677' WHERE "users"."id" = $1[0m  [["id", 8]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.25ms)
+Completed 200 OK in 156ms (Views: 0.8ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 11:21:35 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"h@h", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@h"], ["LIMIT", 1]]
+  [1m[35mSQL (3.9ms)[0m  [1m[33mUPDATE "users" SET "token" = '23b51cd944e72e6897cfb4c6fcf1fc01', "updated_at" = '2018-08-31 15:21:35.801550' WHERE "users"."id" = $1[0m  [["id", 8]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 200 OK in 166ms (Views: 0.8ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 11:25:52 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"h@h", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@h"], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[33mUPDATE "users" SET "token" = 'aa15ba52df0845ddbb9807add011072e', "updated_at" = '2018-08-31 15:25:52.998521' WHERE "users"."id" = $1[0m  [["id", 8]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.22ms)
+Completed 200 OK in 104ms (Views: 0.7ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/sign-out" for ::1 at 2018-08-31 11:25:58 -0400
+Processing by UsersController#signout as */*
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "aa15ba52df0845ddbb9807add011072e"], ["LIMIT", 1]]
+  [1m[35mSQL (4.2ms)[0m  [1m[33mUPDATE "users" SET "token" = '603fe55809dade519347215d0b79e4b4', "updated_at" = '2018-08-31 15:25:58.531990' WHERE "users"."id" = $1[0m  [["id", 8]]
+Completed 204 No Content in 20ms (ActiveRecord: 6.4ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 11:33:07 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"h@h", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@h"], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[33mUPDATE "users" SET "token" = '8205adfb7e428347341d1bd13c062299', "updated_at" = '2018-08-31 15:33:07.474844' WHERE "users"."id" = $1[0m  [["id", 8]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.24ms)
+Completed 200 OK in 150ms (Views: 0.7ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 11:33:08 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"h@h", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@h"], ["LIMIT", 1]]
+  [1m[35mSQL (5.2ms)[0m  [1m[33mUPDATE "users" SET "token" = 'c5a941c1ea8e209c9d20d10b822b50ff', "updated_at" = '2018-08-31 15:33:08.939224' WHERE "users"."id" = $1[0m  [["id", 8]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.23ms)
+Completed 200 OK in 124ms (Views: 0.8ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/sign-in" for ::1 at 2018-08-31 11:34:31 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"h@h", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "h@h"], ["LIMIT", 1]]
+  [1m[35mSQL (4.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '9d26c6121ed01708470ed7a94142d1a0', "updated_at" = '2018-08-31 15:34:31.353198' WHERE "users"."id" = $1[0m  [["id", 8]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.25ms)
+Completed 200 OK in 144ms (Views: 0.8ms | ActiveRecord: 5.2ms)
+
+
+Started PATCH "/change-password" for ::1 at 2018-08-31 11:34:40 -0400
+Processing by UsersController#changepw as */*
+  Parameters: {"passwords"=>"[FILTERED]"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "9d26c6121ed01708470ed7a94142d1a0"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "h@h"], ["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "password_digest" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2018-08-31 15:34:41.107683"], ["password_digest", "$2a$10$Vm8PTWrEEbYfTorkTUVNVeNNnZPRS6JuTxjZNqREZoviGKFoydT1C"], ["id", 8]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 243ms (ActiveRecord: 6.8ms)
+
+
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFlashcards (3)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE "flashcards"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "3"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFlashcards (3)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.9ms)[0m  [1m[35mCREATE TABLE "flashcards" ("id" bigserial primary key, "word" character varying, "definition" character varying, "user_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_47a5d025da"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE  INDEX  "index_flashcards_on_user_id" ON "flashcards"  ("user_id")[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "3"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserFlashcards (20180831171858)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "user_flashcards" ("id" bigserial primary key, "users_id" bigint, "flashcards_id" bigint, "sentence" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bea10fdb83"
+FOREIGN KEY ("users_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_aea6201bfc"
+FOREIGN KEY ("flashcards_id")
+  REFERENCES "flashcards" ("id")
+)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_user_flashcards_on_users_id" ON "user_flashcards"  ("users_id")[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_user_flashcards_on_flashcards_id" ON "user_flashcards"  ("flashcards_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180831171858"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserFlashcards (20180831171858)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "user_flashcards"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180831171858"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFlashcards (3)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "flashcards"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "3"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFlashcards (3)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "flashcards" ("id" bigserial primary key, "word" character varying, "definition" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "3"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUserFlashcards (20180831171858)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "user_flashcards" ("id" bigserial primary key, "users_id" bigint, "flashcards_id" bigint, "sentence" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bea10fdb83"
+FOREIGN KEY ("users_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_aea6201bfc"
+FOREIGN KEY ("flashcards_id")
+  REFERENCES "flashcards" ("id")
+)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE  INDEX  "index_user_flashcards_on_users_id" ON "user_flashcards"  ("users_id")[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE  INDEX  "index_user_flashcards_on_flashcards_id" ON "user_flashcards"  ("flashcards_id")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180831171858"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mFlashcard Load (0.9ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mFlashcard Load (0.8ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "hi"], ["definition", "greeting"], ["created_at", "2018-08-31 17:25:51.057286"], ["updated_at", "2018-08-31 17:25:51.057286"]]
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "hello"], ["definition", "formal greeting"], ["created_at", "2018-08-31 17:25:58.676419"], ["updated_at", "2018-08-31 17:25:58.676419"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mFlashcard Load (0.8ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+  [1m[36mFlashcard Load (0.9ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" ORDER BY "flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.0ms)[0m  [1m[32mINSERT INTO "user_flashcards" ("users_id", "flashcards_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["users_id", 1], ["flashcards_id", 1], ["created_at", "2018-08-31 17:45:33.355028"], ["updated_at", "2018-08-31 17:45:33.355028"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "user_flashcards" ("users_id", "flashcards_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["users_id", 2], ["flashcards_id", 1], ["created_at", "2018-08-31 17:45:40.639533"], ["updated_at", "2018-08-31 17:45:40.639533"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+Started GET "/user_flashcards" for ::1 at 2018-08-31 13:48:56 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserFlashcardsController#index as HTML
+  [1m[36mUserFlashcard Load (1.0ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (7.53ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 5.8ms)
+
+
+  
+NameError (uninitialized constant UserFlashcard::Users):
+  
+app/controllers/user_flashcards_controller.rb:8:in `index'
+Started GET "/user_flashcard" for ::1 at 2018-08-31 13:49:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user_flashcard"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_flashcards" for ::1 at 2018-08-31 13:49:11 -0400
+Processing by UserFlashcardsController#index as HTML
+  [1m[36mUserFlashcard Load (0.9ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.54ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 9.3ms)
+
+
+  
+NameError (uninitialized constant UserFlashcard::Users):
+  
+app/controllers/user_flashcards_controller.rb:8:in `index'
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+Started GET "/flashcards" for ::1 at 2018-08-31 13:50:12 -0400
+Processing by FlashcardsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/user_flashcards" for ::1 at 2018-08-31 13:53:11 -0400
+Processing by UserFlashcardsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUserFlashcard Load (0.8ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+Started GET "/user_flashcards/" for 127.0.0.1 at 2018-08-31 13:57:37 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UserFlashcardsController#index as */*
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 13:58:21 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"j@jh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "j@jh"], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "users" SET "token" = '75023462a00a9853befbf970dcf3f7fe', "updated_at" = '2018-08-31 17:58:21.473861' WHERE "users"."id" = $1[0m  [["id", 1]]
+Completed 401 Unauthorized in 121ms (ActiveRecord: 12.5ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 13:58:34 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"j@jh", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "j@jh"], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[33mUPDATE "users" SET "token" = 'b9ebbbe31f284947377c8499f20d0f6e', "updated_at" = '2018-08-31 17:58:34.913767' WHERE "users"."id" = $1[0m  [["id", 1]]
+Completed 401 Unauthorized in 99ms (ActiveRecord: 3.4ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 13:58:53 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"g@g", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "g@g"], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[33mUPDATE "users" SET "token" = 'cc746c6714ab23978e1aba30a8f7bc10', "updated_at" = '2018-08-31 17:58:53.357942' WHERE "users"."id" = $1[0m  [["id", 2]]
+Completed 401 Unauthorized in 96ms (ActiveRecord: 3.2ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-31 13:59:00 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"g@g", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "g@g"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "g@g"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.11ms)
+Completed 400 Bad Request in 107ms (Views: 3.9ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sign-up" for 127.0.0.1 at 2018-08-31 13:59:13 -0400
+Processing by UsersController#signup as */*
+  Parameters: {"credentials"=>{"email"=>"123@123", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123@123"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "token", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "123@123"], ["token", "c18cbb3d2bf2bedd7cdaff65e56c296e"], ["password_digest", "$2a$10$wzvZZb2uLVItSOAx53/PeuIueKLRwoVxFxkMSaGF4PjSfh3SUHjL."], ["created_at", "2018-08-31 17:59:13.324507"], ["updated_at", "2018-08-31 17:59:13.324507"]]
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "123@123"], ["id", 9], ["LIMIT", 1]]
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Json (0.85ms)
+Completed 201 Created in 110ms (Views: 8.2ms | ActiveRecord: 6.0ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUserFlashcard Load (0.7ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUserFlashcard Load (0.9ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUserFlashcard Load (0.7ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+  [1m[36mUserFlashcard Load (1.1ms)[0m  [1m[34mSELECT  "user_flashcards".* FROM "user_flashcards" ORDER BY "user_flashcards"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUserFlashcard Load (0.7ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+  [1m[36mUserFlashcard Load (0.7ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUserFlashcard Load (0.7ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUserFlashcard Load (0.9ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+  [1m[36mUserFlashcard Load (1.1ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 14:17:37 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"123@123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123@123"], ["LIMIT", 1]]
+  [1m[35mSQL (5.3ms)[0m  [1m[33mUPDATE "users" SET "token" = '165dba7d19978b14448515663814f9d3', "updated_at" = '2018-08-31 18:17:37.569945' WHERE "users"."id" = $1[0m  [["id", 9]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (3.24ms)
+Completed 200 OK in 116ms (Views: 3.8ms | ActiveRecord: 10.3ms)
+
+
+Started POST "/user_flashcards/" for 127.0.0.1 at 2018-08-31 14:18:45 -0400
+  
+SyntaxError (/home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/app/controllers/user_flashcards_controller.rb:4: syntax error, unexpected ':', expecting ']'
+..._user_flashcard, only: [:show :update :destroy]
+...                              ^
+/home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/app/controllers/user_flashcards_controller.rb:4: syntax error, unexpected ']', expecting keyword_end
+... only: [:show :update :destroy]
+...                              ^):
+  
+app/controllers/user_flashcards_controller.rb:4: syntax error, unexpected ':', expecting ']'
+app/controllers/user_flashcards_controller.rb:4: syntax error, unexpected ']', expecting keyword_end
+Started POST "/user_flashcards/" for 127.0.0.1 at 2018-08-31 14:19:49 -0400
+Processing by UserFlashcardsController#create as */*
+  Parameters: {"flashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hello"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "165dba7d19978b14448515663814f9d3"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.5ms)
+
+
+  
+NoMethodError (undefined method `user_flashcards' for #<User:0x00007fa4c811cd70>
+Did you mean?  UserFlashcards
+               UserFlashcards=
+               UserFlashcard_ids):
+  
+app/controllers/user_flashcards_controller.rb:20:in `create'
+Started GET "/user_flashcards/" for 127.0.0.1 at 2018-08-31 14:21:29 -0400
+Processing by UserFlashcardsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "165dba7d19978b14448515663814f9d3"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `user_flashcards' for #<User:0x0000555de2db7f78>
+Did you mean?  UserFlashcards
+               UserFlashcards=
+               UserFlashcard_ids):
+  
+app/controllers/user_flashcards_controller.rb:8:in `index'
+Started GET "/user_flashcards/" for 127.0.0.1 at 2018-08-31 14:22:32 -0400
+Processing by UserFlashcardsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "165dba7d19978b14448515663814f9d3"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 4.4ms)
+
+
+  
+NoMethodError (undefined method `userflashcards' for #<User:0x00007fa4c855f608>
+Did you mean?  UserFlashcards
+               UserFlashcards=
+               UserFlashcard_ids
+               UserFlashcard_ids=):
+  
+app/controllers/user_flashcards_controller.rb:8:in `index'
+Started GET "/user_flashcards/" for 127.0.0.1 at 2018-08-31 14:23:13 -0400
+Processing by UserFlashcardsController#index as */*
+  [1m[36mUserFlashcard Load (0.5ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (5.83ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.4ms)
+
+
+  
+NameError (uninitialized constant UserFlashcard::Users):
+  
+app/controllers/user_flashcards_controller.rb:10:in `index'
+  [1m[36mUserFlashcard Load (0.8ms)[0m  [1m[34mSELECT "user_flashcards".* FROM "user_flashcards"[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserFlashcards (20180831171858)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "user_flashcards"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180831171858"]]
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUserFlashcards (20180831171858)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFlashcards (3)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "flashcards"[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "3"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFlashcards (3)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "flashcards" ("id" bigserial primary key, "word" character varying, "definition" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "3"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mFlashcard Load (0.8ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "hi"], ["definition", "greeting"], ["created_at", "2018-08-31 18:26:51.530937"], ["updated_at", "2018-08-31 18:26:51.530937"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "hello"], ["definition", "greeting"], ["created_at", "2018-08-31 18:26:58.831851"], ["updated_at", "2018-08-31 18:26:58.831851"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFlashcards (3)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "flashcards"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "3"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFlashcards (3)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "flashcards" ("id" bigserial primary key, "word" character varying, "definition" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "3"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMyflashcards (20180831182842)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "myflashcards" ("id" bigserial primary key, "user_id" bigint, "flashcards_id" bigint, "sentence" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7948e0d673"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_617588f267"
+FOREIGN KEY ("flashcards_id")
+  REFERENCES "flashcards" ("id")
+)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE  INDEX  "index_myflashcards_on_user_id" ON "myflashcards"  ("user_id")[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE  INDEX  "index_myflashcards_on_flashcards_id" ON "myflashcards"  ("flashcards_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180831182842"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[36mFlashcard Load (0.7ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "hi"], ["definition", "greeting"], ["created_at", "2018-08-31 18:30:12.881015"], ["updated_at", "2018-08-31 18:30:12.881015"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "flashcards" ("word", "definition", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["word", "hello"], ["definition", "formal greeting"], ["created_at", "2018-08-31 18:30:20.885622"], ["updated_at", "2018-08-31 18:30:20.885622"]]
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMyflashcard Load (2.3ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMyflashcards (20180831182842)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "myflashcards"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180831182842"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMyflashcards (20180831182842)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "myflashcards" ("id" bigserial primary key, "users_id" bigint, "flashcards_id" bigint, "sentence" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_598f19d25f"
+FOREIGN KEY ("users_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_617588f267"
+FOREIGN KEY ("flashcards_id")
+  REFERENCES "flashcards" ("id")
+)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE  INDEX  "index_myflashcards_on_users_id" ON "myflashcards"  ("users_id")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_myflashcards_on_flashcards_id" ON "myflashcards"  ("flashcards_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180831182842"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMyflashcard Load (1.2ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+  [1m[36mFlashcard Load (0.9ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+  [1m[36mFlashcard Load (1.4ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMyflashcard Load (0.7ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMyflashcards (20180831182842)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "myflashcards"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20180831182842"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2237243498424782400)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMyflashcards (20180831182842)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "myflashcards" ("id" bigserial primary key, "user_id" bigint, "flashcard_id" bigint, "sentence" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_7948e0d673"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_41528e7e6f"
+FOREIGN KEY ("flashcard_id")
+  REFERENCES "flashcards" ("id")
+)[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE  INDEX  "index_myflashcards_on_user_id" ON "myflashcards"  ("user_id")[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_myflashcards_on_flashcard_id" ON "myflashcards"  ("flashcard_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180831182842"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2237243498424782400)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMyflashcard Load (0.9ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+  [1m[36mFlashcard Load (1.8ms)[0m  [1m[34mSELECT "flashcards".* FROM "flashcards"[0m
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (1.1ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "myflashcards" ("user_id", "flashcard_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["flashcard_id", 1], ["created_at", "2018-08-31 18:39:13.599875"], ["updated_at", "2018-08-31 18:39:13.599875"]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
