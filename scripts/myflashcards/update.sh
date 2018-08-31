@@ -1,12 +1,12 @@
 #!/bin/bash
 
-curl "http://localhost:4741/user_flashcards/" \
+curl "http://localhost:4741/myflashcards/${ID}" \
   --include \
-  --request POST \
-  --header "Content-Type: application/json" \
+  --request PATCH \
   --header "Authorization: Token token=${TOKEN}" \
+  --header "Content-Type: application/json" \
   --data '{
-    "flashcard": {
+    "myflashcard": {
       "user_id": "'"${USER}"'",
       "flashcard_id": "'"${VOCAB}"'",
       "sentence": "'"${SEN}"'"

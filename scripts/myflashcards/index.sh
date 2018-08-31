@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://localhost:4741/user_flashcards/" \
+curl "http://localhost:4741/myflashcards/" \
   --include \
   --request GET \
   --header "Content-Type: application/json" \

@@ -1623,3 +1623,541 @@ FOREIGN KEY ("flashcard_id")
   [1m[36mFlashcard Load (1.1ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "myflashcards" ("user_id", "flashcard_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["flashcard_id", 1], ["created_at", "2018-08-31 18:39:13.599875"], ["updated_at", "2018-08-31 18:39:13.599875"]]
   [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/meals" for ::1 at 2018-08-31 14:43:08 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/meals"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.2) lib/puma/configuration.rb:225:in `call'
+puma (3.11.2) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.2) lib/puma/server.rb:438:in `process_client'
+puma (3.11.2) lib/puma/server.rb:302:in `block in run'
+puma (3.11.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/myflashcards" for ::1 at 2018-08-31 14:43:11 -0400
+Processing by MyflashcardsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `myflashcards' for nil:NilClass):
+  
+app/controllers/myflashcards_controller.rb:6:in `index'
+Started GET "/myflashcards" for ::1 at 2018-08-31 14:43:41 -0400
+Processing by MyflashcardsController#index as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (0.6ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "myflashcards" ("user_id", "flashcard_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["flashcard_id", 1], ["created_at", "2018-08-31 18:43:49.919608"], ["updated_at", "2018-08-31 18:43:49.919608"]]
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (0.7ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "myflashcards" ("user_id", "flashcard_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["flashcard_id", 2], ["created_at", "2018-08-31 18:43:52.866683"], ["updated_at", "2018-08-31 18:43:52.866683"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (1.1ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (1.2ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "myflashcards" ("user_id", "flashcard_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 9], ["flashcard_id", 2], ["created_at", "2018-08-31 18:44:11.632063"], ["updated_at", "2018-08-31 18:44:11.632063"]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 14:47:20 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"123@123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123@123"], ["LIMIT", 1]]
+  [1m[35mSQL (3.1ms)[0m  [1m[33mUPDATE "users" SET "token" = '1821fd2f77f9584a58af9986cb97f153', "updated_at" = '2018-08-31 18:47:20.322971' WHERE "users"."id" = $1[0m  [["id", 9]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.28ms)
+Completed 200 OK in 107ms (Views: 0.8ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 14:48:02 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.7ms)
+
+
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 14:49:05 -0400
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.6ms)
+
+
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 14:49:31 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"flashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hi there"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "1821fd2f77f9584a58af9986cb97f153"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `myflashcards' for #<User:0x0000555de34e7208>
+Did you mean?  Myflashcards
+               Myflashcards=
+               Flashcards
+               Myflashcard_ids
+               Flashcards=):
+  
+app/controllers/myflashcards_controller.rb:18:in `create'
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 14:50:22 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"flashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hi there"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "1821fd2f77f9584a58af9986cb97f153"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (1.2ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+Completed 500 Internal Server Error in 267579ms (ActiveRecord: 10.1ms)
+
+
+  
+NoMethodError (undefined method `myflashcards' for #<User:0x00007fa4c8642b10>
+Did you mean?  Myflashcards
+               Myflashcards=
+               Flashcards
+               Myflashcard_ids
+               Flashcards=):
+  
+app/controllers/myflashcards_controller.rb:19:in `create'
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 14:54:56 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"flashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hi there"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "1821fd2f77f9584a58af9986cb97f153"], ["LIMIT", 1]]
+Completed 400 Bad Request in 17223ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: myflashcard):
+  
+app/controllers/myflashcards_controller.rb:52:in `myflashcard_params'
+app/controllers/myflashcards_controller.rb:21:in `create'
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 14:55:15 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"flashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hi there"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "1821fd2f77f9584a58af9986cb97f153"], ["LIMIT", 1]]
+Completed 400 Bad Request in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: myflashcard):
+  
+app/controllers/myflashcards_controller.rb:52:in `myflashcard_params'
+app/controllers/myflashcards_controller.rb:21:in `create'
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 14:57:52 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"flashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hi there"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "1821fd2f77f9584a58af9986cb97f153"], ["LIMIT", 1]]
+Completed 400 Bad Request in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: myflashcard):
+  
+app/controllers/myflashcards_controller.rb:52:in `myflashcard_params'
+app/controllers/myflashcards_controller.rb:21:in `create'
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 14:58:32 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"flashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hi there"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "1821fd2f77f9584a58af9986cb97f153"], ["LIMIT", 1]]
+Completed 400 Bad Request in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: myflashcard):
+  
+app/controllers/myflashcards_controller.rb:52:in `myflashcard_params'
+app/controllers/myflashcards_controller.rb:21:in `create'
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 14:58:57 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"flashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hi there"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "1821fd2f77f9584a58af9986cb97f153"], ["LIMIT", 1]]
+Started POST "/sign-in" for 127.0.0.1 at 2018-08-31 15:00:27 -0400
+Completed 400 Bad Request in 122492ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: myflashcard):
+  
+app/controllers/myflashcards_controller.rb:53:in `myflashcard_params'
+app/controllers/myflashcards_controller.rb:21:in `create'
+Processing by UsersController#signin as */*
+  Parameters: {"credentials"=>{"email"=>"123@123", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "123@123"], ["LIMIT", 1]]
+  [1m[35mSQL (5.7ms)[0m  [1m[33mUPDATE "users" SET "token" = '7cb9d06677562fe6bafd589a2ad8a8c5', "updated_at" = '2018-08-31 19:01:00.217556' WHERE "users"."id" = $1[0m  [["id", 9]]
+[active_model_serializers] Rendered UserLoginSerializer with ActiveModelSerializers::Adapter::Json (0.26ms)
+Completed 200 OK in 115ms (Views: 0.7ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:02:20 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.4ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (21.8ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `flashcards' for #<Myflashcard:0x00007fa4b010ced8>
+Did you mean?  flashcard
+               flashcard=
+               flashcard_id):
+  
+app/controllers/myflashcards_controller.rb:10:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:03:02 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.6ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+  [1m[36mCACHE Myflashcard Load (0.1ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+[active_model_serializers]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (25.21ms)
+Completed 500 Internal Server Error in 38650ms (ActiveRecord: 1.5ms)
+
+
+  
+NoMethodError (undefined method `flashcards' for #<Myflashcard:0x00007fa4b008c788>
+Did you mean?  flashcard
+               flashcard=
+               flashcard_id):
+  
+app/controllers/myflashcards_controller.rb:11:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:06:30 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.7ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+  [1m[36mCACHE Myflashcard Load (0.1ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mFlashcard Load (0.5ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "myflashcards" ("user_id", "flashcard_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["flashcard_id", 1], ["created_at", "2018-08-31 19:20:36.207576"], ["updated_at", "2018-08-31 19:20:36.207576"]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMyflashcard Load (1.2ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+[active_model_serializers]   [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (25.02ms)
+Completed 500 Internal Server Error in 890314ms (ActiveRecord: 15.8ms)
+
+
+  
+NoMethodError (undefined method `flashcards' for #<Myflashcard:0x00007fa4b01b5560>
+Did you mean?  flashcard
+               flashcard=
+               flashcard_id):
+  
+app/controllers/myflashcards_controller.rb:11:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:21:25 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (1.5ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (18.09ms)
+Completed 500 Internal Server Error in 6747ms (ActiveRecord: 2.3ms)
+
+
+  
+NoMethodError (undefined method `flashcards' for #<Myflashcard:0x00007fa4d009ac78>
+Did you mean?  flashcard
+               flashcard=
+               flashcard_id):
+  
+app/controllers/myflashcards_controller.rb:11:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:21:46 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.4ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (16.86ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 9.0ms)
+
+
+  
+NoMethodError (undefined method `flashcards' for #<Myflashcard:0x0000555de3221938>
+Did you mean?  flashcard
+               flashcard=
+               flashcard_id):
+  
+app/controllers/myflashcards_controller.rb:10:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:24:34 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `myflashcards' for #<User:0x00007fa4b004e7a8>
+Did you mean?  Myflashcards
+               Myflashcards=
+               Flashcards
+               Myflashcard_ids
+               Flashcards=):
+  
+app/controllers/myflashcards_controller.rb:8:in `index'
+DEPRECATION WARNING: ActiveSupport.halt_callback_chains_on_return_false= is deprecated and will be removed in Rails 5.2. (called from <top (required)> at /home/jen/wdi/projects/flashvocab/rails-api-flash-vocab/config/initializers/new_framework_defaults.rb:18)
+  [1m[36mMyflashcard Load (0.7ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards"[0m
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:30:02 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.4ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (18.09ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `flashcards' for #<Myflashcard:0x00007fa4d0066a90>
+Did you mean?  flashcard
+               flashcard=
+               flashcard_id):
+  
+app/controllers/myflashcards_controller.rb:10:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:30:30 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.4ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (16.26ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `flashcards' for #<Myflashcard:0x00007fa4dc1ce2c8>
+Did you mean?  flashcard
+               flashcard=
+               flashcard_id):
+  
+app/controllers/myflashcards_controller.rb:10:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:35:19 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `myflashcard' for #<User:0x00007fa4c810ce70>
+Did you mean?  myflashcards
+               myflashcards=
+               flashcards):
+  
+app/controllers/myflashcards_controller.rb:8:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:38:01 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.4ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (13.56ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `flashcards' for #<Myflashcard:0x00007fa4dc0f0f18>
+Did you mean?  flashcard
+               flashcard=
+               flashcard_id):
+  
+app/controllers/myflashcards_controller.rb:10:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:38:55 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.4ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   [1m[36mFlashcard Load (0.2ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (27.57ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 4.0ms)
+
+
+  
+NoMethodError (undefined method `sentence' for #<Flashcard:0x00007fa4dc08a7b8>):
+  
+app/controllers/myflashcards_controller.rb:10:in `index'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:40:12 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.5ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (14.2ms)
+Completed 200 OK in 41ms (Views: 22.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/myflashcards/4" for 127.0.0.1 at 2018-08-31 15:41:34 -0400
+Processing by MyflashcardsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.07ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/myflashcards/4" for 127.0.0.1 at 2018-08-31 15:42:24 -0400
+Processing by MyflashcardsController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/myflashcards_controller.rb:41:in `destroy'
+Started DELETE "/myflashcards/4" for 127.0.0.1 at 2018-08-31 15:42:50 -0400
+Processing by MyflashcardsController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/myflashcards_controller.rb:41:in `destroy'
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:42:57 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.4ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   [1m[36mFlashcard Load (0.5ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (22.1ms)
+Completed 200 OK in 41ms (Views: 25.2ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/myflashcards/4" for 127.0.0.1 at 2018-08-31 15:43:50 -0400
+Processing by MyflashcardsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 24ms (Views: 4.4ms | ActiveRecord: 4.7ms)
+
+
+  [1m[36mMyflashcard Load (1.0ms)[0m  [1m[34mSELECT  "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/myflashcards/4" for 127.0.0.1 at 2018-08-31 15:45:48 -0400
+Processing by MyflashcardsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:46:08 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.4ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (19.71ms)
+Completed 200 OK in 37ms (Views: 22.4ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:46:25 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.4ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   [1m[36mFlashcard Load (0.3ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.84ms)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/myflashcards/4" for 127.0.0.1 at 2018-08-31 15:46:44 -0400
+Processing by MyflashcardsController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/myflashcards_controller.rb:41:in `destroy'
+Started DELETE "/myflashcards/4" for 127.0.0.1 at 2018-08-31 15:47:00 -0400
+Processing by MyflashcardsController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/myflashcards_controller.rb:41:in `destroy'
+Started PATCH "/myflashcards/4" for 127.0.0.1 at 2018-08-31 15:47:52 -0400
+Processing by MyflashcardsController#update as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"2", "sentence"=>"hi"}, "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Unpermitted parameter: :flashcard_id
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/myflashcards_controller.rb:32:in `update'
+Started GET "/myflashcards/4" for 127.0.0.1 at 2018-08-31 15:48:09 -0400
+Processing by MyflashcardsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Class (0.06ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:48:14 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.5ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   [1m[36mFlashcard Load (0.4ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (2.47ms)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:48:24 -0400
+Processing by MyflashcardsController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+  [1m[36mMyflashcard Load (0.5ms)[0m  [1m[34mSELECT "myflashcards".* FROM "myflashcards" WHERE "myflashcards"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   [1m[36mFlashcard Load (0.6ms)[0m  [1m[34mSELECT  "flashcards".* FROM "flashcards" WHERE "flashcards"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Json (3.62ms)
+Completed 200 OK in 9ms (Views: 4.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:49:04 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"9", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Unpermitted parameter: :flashcard_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 422 Unprocessable Entity in 8ms (Views: 1.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:49:22 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"1", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Unpermitted parameter: :flashcard_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.08ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/myflashcards/" for 127.0.0.1 at 2018-08-31 15:49:29 -0400
+Processing by MyflashcardsController#create as */*
+  Parameters: {"myflashcard"=>{"user_id"=>"9", "flashcard_id"=>"10", "sentence"=>"hi"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."token" = $1 LIMIT $2[0m  [["token", "7cb9d06677562fe6bafd589a2ad8a8c5"], ["LIMIT", 1]]
+Unpermitted parameter: :flashcard_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.08ms)
+Completed 422 Unprocessable Entity in 6ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+

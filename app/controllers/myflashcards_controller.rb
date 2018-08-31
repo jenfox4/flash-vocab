@@ -1,11 +1,14 @@
-class MyflashcardsController < ApplicationController
-  before_action :set_myflashcard, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+class MyflashcardsController < ProtectedController
+  before_action :set_myflashcard, only: %i[:show :update :destroy]
 
   # GET /myflashcards
   def index
-    @myflashcards = Myflashcard.all
+    @myflashcards = current_user.myflashcards.all
 
     render json: @myflashcards
+    # binding.pry
   end
 
   # GET /myflashcards/1
@@ -15,7 +18,7 @@ class MyflashcardsController < ApplicationController
 
   # POST /myflashcards
   def create
-    @myflashcard = Myflashcard.new(myflashcard_params)
+    @myflashcard = current_user.myflashcards.build(myflashcard_params)
 
     if @myflashcard.save
       render json: @myflashcard, status: :created, location: @myflashcard
@@ -41,7 +44,7 @@ class MyflashcardsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_myflashcard
-      @myflashcard = Myflashcard.find(params[:id])
+      @myflashcard = current_user.myflashcards.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
