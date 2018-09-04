@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class FlashcardsController < ProtectedController
+class FlashcardsController < OpenReadController
 before_action :set_flashcard, only: %i[update show destroy]
   # GET /examples
   # GET /examples.json
   def index
-    @flashcards = current_user.flashcards.all
+    @flashcards = Flashcard.all
 
     render json: @flashcards
   end
@@ -43,6 +43,6 @@ before_action :set_flashcard, only: %i[update show destroy]
   end
 
   def set_flashcard
-    @flashcard = current_user.flashcards.find(params[:id])
+    @flashcard = Flashcard.find(params[:id])
   end
 end
