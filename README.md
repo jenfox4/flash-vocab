@@ -1,20 +1,38 @@
-####Flash Vocab by Jennifer Fox
+# Flash Vocab by Jennifer Fox (WDI-26)
+### API and Database
 
-###Technologies and Tools Used
+#### View the finished project here:
+#### client-side-repo:
 
-###About The Project
-As a previous educator, I am passionate about bringing learning experiences to broader audiences through tech. I truly believe tech can level the education playing field. Thus, for this project I wanted to create a full stack app that seeks at helping with one of the biggest education hurdles there is -- tackling standardized test. As someone who both took the GRE and loves learning vocabulary, I had the idea of creating a clean, easily accessibly GRE vocabulary app where users can practice vocabulary words for free and on the go.
+#### You can log-in with the following for a demo:
+Username: demo@demo
+Password: demo
 
-###The Development Process
+## About Flash Vocab
+As a previous educator, I strongly believe in the ability of technology to level the playing field and tackle education inequity. I wanted to create a full stack app aimed at this mission. I personally have spent countless hours and a lot of money and resources for the GRE. I realized there are few free online resources for the GRE that students can easily access.
 
-##User Stories
+This app is meant to be a study tool available for anyone who wants to study the GRE to brush up on rigorous vocabulary. Users can view over 2,000 GRE words and definitions. Users can than create their own personal study stack of flashcards with words they need to specifically study.
 
-#Behavioral Driven User Stories
+## Technologies Used
+### Back-end technologies (see back-end repo)
+* Postgres
+* Ruby / Ruby on rails
+* Test driven development
 
-#User Experience User Stories
+### Front-end technologies
+* Javascript
+* HTML
+* CSS
+* Sass
+* AJAX
+* Bootstrap
+* Grunt
+* Flexbox
 
-##WireFrames
+## The Back-End Development Process
 
-##Test Driven Development
 
-##The Code
+## Entity Relationship Diagrams
+
+
+## To be continued!
