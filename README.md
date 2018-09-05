@@ -1,8 +1,9 @@
 # Flash Vocab by Jennifer Fox (WDI-26)
 ### API and Database
 
-#### View the finished project here:
-#### client-side-repo:
+#### View the finished project here: https://jenfox4.github.io/flash-vocab-client/
+#### Deployed Heroku backend: https://flashvocab.herokuapp.com/
+#### client-side-repo: https://github.com/jenfox4/flash-vocab-client
 
 #### You can log-in with the following for a demo:
 Username: demo@demo
@@ -33,7 +34,7 @@ This app is meant to be a study tool available for anyone who wants to study the
 Before beginning, I planned my backend using entity relationship diagrams. I figured out which resources would belong to others. Once I knew what I was creating, I used test-driven development to create resources for the databse. I used heroku to serve my backend.
 
 ## Entity Relationship Diagrams
-
+![Alt Text](https://github.com/jenfox4/flash-vocab-api/blob/master/Database%20ER%20Diagram.jpeg)
 
 ## To be continued!
-I have not yet created validations for the data that can be entered into the database. I definitely want to create validations so that only acceptable questions can be edited. 
+I have not yet created validations for the data that can be entered into the database. I definitely want to create validations so that only acceptable questions can be edited.
