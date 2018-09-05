@@ -30,9 +30,10 @@ This app is meant to be a study tool available for anyone who wants to study the
 * Flexbox
 
 ## The Back-End Development Process
-
+Before beginning, I planned my backend using entity relationship diagrams. I figured out which resources would belong to others. Once I knew what I was creating, I used test-driven development to create resources for the databse. I used heroku to serve my backend.
 
 ## Entity Relationship Diagrams
 
 
 ## To be continued!
+I have not yet created validations for the data that can be entered into the database. I definitely want to create validations so that only acceptable questions can be edited. 
